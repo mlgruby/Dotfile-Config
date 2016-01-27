@@ -9,6 +9,6 @@ Configuration file for Bash, nano and emacs
 - nano: Base config file is taken from [dotfile] (https://github.com/helmuthdu/dotfiles) and [nanorc](https://github.com/scopatz/nanorc).
     - This config file contains colour coding for most of the languages.   
 
-To use all the features paste all the files and directory in your home directory.
+To install just paste all the files and directory in your home directory!! pretty simple!!.
 
 Hope community will customize in other better way. Please send me pull request if you added cool features. 
