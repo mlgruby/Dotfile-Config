@@ -646,6 +646,3 @@ _isroot=false
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi 
-
-
-. /home/satya/torch/install/bin/torch-activate
