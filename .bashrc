@@ -641,8 +641,3 @@ _isroot=false
     fi
   #}}}
 #}}}
-
-# Sometime below way is also liked by other users (Write all your alias in seperate file)
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi 
