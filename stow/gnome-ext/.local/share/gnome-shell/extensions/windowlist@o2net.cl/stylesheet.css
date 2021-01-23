@@ -1,0 +1,30 @@
+/* for some reason the color doesn't seem to be working, but italic does. . .. */
+.panel-button:demands-attention,
+.panel-button:urgent {
+    color: blue;
+    font-style: italic;
+}
+
+.window-list-box {
+    spacing: 6px;
+    -title-format: trad;
+}
+
+.app-window-switcher {
+    spacing: 4px;
+}
+
+.app-window-switcher-divider {
+    border-left: 1px;
+    border-color: #ffffff;
+}
+
+.window-thumbnail {
+    margin-left: 4px;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.window-thumbnail:hover {
+    background-color: #4c4c4c;
+}

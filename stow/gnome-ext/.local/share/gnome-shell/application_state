@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" score="8" last-seen="1611350505"/>
+    <application id="calibre-gui.desktop" score="8" last-seen="1611003185"/>
+    <application id="gitter.desktop" score="9.91552734375" last-seen="1611351255"/>
+    <application id="gcr-prompter.desktop" score="29.2509765625" last-seen="1611348003"/>
+    <application id="guake.desktop" score="71" last-seen="1611363730"/>
+    <application id="org.gnome.DejaDup.desktop" score="6.1875" last-seen="1611366024"/>
+    <application id="firefox.desktop" score="25283.7939453125" last-seen="1611366166"/>
+    <application id="brave-browser.desktop" score="11501.6484375" last-seen="1611371290"/>
+    <application id="org.gnome.seahorse.Application.desktop" score="13" last-seen="1610887724"/>
+    <application id="org.gnome.eog.desktop" score="11" last-seen="1611360773"/>
+    <application id="calibre-ebook-viewer.desktop" score="19" last-seen="1611010711"/>
+    <application id="steam.desktop" score="2874.5458984375" last-seen="1611371262"/>
+    <application id="org.remmina.Remmina.desktop" score="261" last-seen="1611176846"/>
+    <application id="spotify_spotify.desktop" score="3993.25" last-seen="1611371259"/>
+    <application id="pick-colour-picker_pick-colour-picker.desktop" score="6" last-seen="1611349967"/>
+    <application id="code_code.desktop" score="278" last-seen="1611366359"/>
+    <application id="libreoffice-writer.desktop" score="3" last-seen="1610836484"/>
+    <application id="org.gnome.Terminal.desktop" score="298" last-seen="1611352985"/>
+    <application id="slack_slack.desktop" score="1528.34423828125" last-seen="1611337963"/>
+    <application id="org.gnome.Nautilus.desktop" score="99" last-seen="1611363459"/>
+    <application id="gnome-system-monitor.desktop" score="5" last-seen="1611361213"/>
+    <application id="yelp.desktop" score="0" last-seen="1611349233"/>
+    <application id="org.gnome.Evince.desktop" score="95" last-seen="1610908654"/>
+    <application id="update-manager.desktop" score="6" last-seen="1611160050"/>
+    <application id="google-chrome.desktop" score="6937" last-seen="1611334683"/>
+    <application id="teams.desktop" score="364.32421875" last-seen="1611348009"/>
+    <application id="org.gnome.gedit.desktop" score="197" last-seen="1611363802"/>
+  </context>
+</application-state>
