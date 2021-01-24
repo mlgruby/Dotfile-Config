@@ -127,8 +127,8 @@ zle -N up_widget
 bindkey "^\\" up_widget
 
 # source global settings
-if [ -f "$HOME/.bash_aliases" ] ; then
-  source "$HOME/.bash_aliases"
+if [ -f "$HOME/.aliases" ] ; then
+  source "$HOME/.aliases"
 fi
 
 if [ -f "$HOME/.fzf.zsh" ] ; then
