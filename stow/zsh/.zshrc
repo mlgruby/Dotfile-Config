@@ -145,7 +145,7 @@ if [ -f "$HOME/.local/.bash_aliases" ] ; then
 fi
 
 # forgit
-source <(curl -sSL git.io/forgit)
+source ~/.forgit.plugin.zsh
 
 # find-in-file - usage: fif <SEARCH_TERM>
 fif() {
