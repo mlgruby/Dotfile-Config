@@ -144,6 +144,57 @@ if [ -f "$HOME/.local/.bash_aliases" ] ; then
   source "$HOME/.local/.bash_aliases"
 fi
 
+# forgit
+source <(curl -sSL git.io/forgit)
+
+# find-in-file - usage: fif <SEARCH_TERM>
+fif() {
+  if [ ! "$#" -gt 0 ]; then
+    echo "Need a string to search for!";
+    return 1;
+  fi
+  rg --files-with-matches --no-messages "$1" | fzf $FZF_PREVIEW_WINDOW --preview "rg --ignore-case --pretty --context 10 '$1' {}"
+}
+
+# Select a docker container to start and attach to
+function da() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker start "$cid" && docker attach "$cid"
+}
+# Select a running docker container to stop
+function ds() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker stop "$cid"
+}
+# Select a docker container to remove
+function drm() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker rm "$cid"
+}
+
+# Coursier
+function fcsi() { # fzf coursier install
+  function csl() {
+    unzip -l "$(cs fetch "$1":latest.stable)" | grep json | sed -r 's/.*:[0-9]{2}\s*(.+)\.json$/\1/'
+  }
+
+  cs install --contrib "$(cat <(csl io.get-coursier:apps) <(csl io.get-coursier:apps-contrib) | sort -r | fzf)"
+}
+
+function fcsji() { # fzf coursier java install
+  cs java --jvm $(cs java --available | fzf) --setup
+}
+
+function fcsrt() { # fzf coursier resolve tree
+  $(cs resolve -t "$1" | fzf --reverse --ansi)
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -167,3 +218,11 @@ for bcfile in ~/.bash_completion.d/* ; do
     . ${bcfile}
 done
 # END: Added by Airflow Breeze autocomplete setup
+
+# coursier bin
+export PATH="$PATH:/home/satya/.local/share/coursier/bin"
+
+# >>> JVM installed by coursier >>>
+export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm@20.3.0"
+export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm@20.3.0/bin"
+# <<< JVM installed by coursier <<<
