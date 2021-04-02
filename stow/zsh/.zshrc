@@ -144,6 +144,15 @@ if [ -f "$HOME/.local/.bash_aliases" ] ; then
   source "$HOME/.local/.bash_aliases"
 fi
 
+# stow (th stands for target=home)
+stowth() {
+  stow -vSt ~ $1
+}
+
+unstowth() {
+  stow -vDt ~ $1
+}
+
 # forgit
 source ~/.forgit.plugin.zsh
 
