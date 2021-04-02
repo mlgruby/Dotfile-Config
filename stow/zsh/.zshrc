@@ -144,6 +144,9 @@ if [ -f "$HOME/.local/.bash_aliases" ] ; then
   source "$HOME/.local/.bash_aliases"
 fi
 
+# source .profile in zsh
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+
 # stow (th stands for target=home)
 stowth() {
   stow -vSt ~ $1

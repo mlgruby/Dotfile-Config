@@ -36,6 +36,11 @@ if [ -d "$HOME/.local/share/coursier/bin" ] ; then
   PATH="$PATH:$HOME/.local/share/coursier/bin"
 fi
 
+# source local settings
+if [ -f "$HOME/.local/.profile" ] ; then
+  source "$HOME/.local/.profile"
+fi
+
 # environment variables
 export EDITOR="/usr/local/bin/nvim"
 export VISUAL=$EDITOR
@@ -50,21 +55,20 @@ export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
 export FZF_ALT_C_COMMAND='fd --type d . --color=never --hidden'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
 
+# java option 
 export JAVA_TOOL_OPTIONS="
 -Dconfig.override_with_env_vars=true
--Duser.timezone=UTC
--Djava.net.preferIPv4Stack=true"
+-Djava.net.preferIPv4Stack=true
+-Duser.timezone=UTC"
 
+# cache ssh key at login
 keychain --nogui --quiet $HOME/.ssh/id_rsa
 source $HOME/.keychain/$(hostname)-sh
 
+# xserver config for wsl
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
 export LIBGL_ALWAYS_INDIRECT=1
 
-# source local settings
-if [ -f "$HOME/.local/.profile" ] ; then
-  source "$HOME/.local/.profile"
-fi
 # >>> JVM installed by coursier >>>
 export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0"
 export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0/bin"
