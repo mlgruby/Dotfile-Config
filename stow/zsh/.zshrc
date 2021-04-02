@@ -168,6 +168,11 @@ fif() {
   rg --files-with-matches --no-messages "$1" | fzf $FZF_PREVIEW_WINDOW --preview "rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
+# vevn
+function activate-venv() {
+  source "$HOME/.venv/$(ls ~/.venv/ | fzf)/bin/activate"
+}
+
 # Select a docker container to start and attach to
 function da() {
   local cid
@@ -234,7 +239,3 @@ unset __conda_setup
 # coursier bin
 export PATH="$PATH:/home/satya/.local/share/coursier/bin"
 
-# >>> JVM installed by coursier >>>
-export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm@20.3.0"
-export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm@20.3.0/bin"
-# <<< JVM installed by coursier <<<

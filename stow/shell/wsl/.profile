@@ -73,3 +73,6 @@ export LIBGL_ALWAYS_INDIRECT=1
 export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0"
 export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0/bin"
 # <<< JVM installed by coursier <<<
+
+# set shell title
+echo -ne "\033]0;qtx\a"
