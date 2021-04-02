@@ -1,0 +1,35 @@
+[alias]
+	l = log --relative-date --decorate --graph --abbrev-commit
+	ll = log --relative-date --decorate --all --graph --abbrev-commit
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[format]
+	pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+[include]
+	path = ~/.local/.gitconfig
+[merge]
+	tool = vscode
+	conflictStyle = diff3
+[mergetool]
+	keepBackup = false
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[pager]
+	branch = false
+[user]
+	email = satyasheel@quantexa.com
+	name = Satyasheel
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+[credential]
+	helper = cache --timeout 3600
+[rerere]
+	enabled = true
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main
