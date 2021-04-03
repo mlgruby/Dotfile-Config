@@ -147,6 +147,9 @@ fi
 # source .profile in zsh
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # stow (th stands for target=home)
 stowth() {
   stow -vSt ~ $1
@@ -159,14 +162,35 @@ unstowth() {
 # forgit
 source ~/.forgit.plugin.zsh
 
-# git delete branch 
-delete-branches() {
-  git branch |
-    grep --invert-match '\*' |
-    cut -c 3- |
-    fzf --multi --preview="git log {} --" |
-    xargs --no-run-if-empty git branch --delete --force
-}
+fzf-z-search() {
+        local res=$(history -n 1 | tail -f | fzf)
+        if [ -n "$res" ]; then
+            BUFFER+="$res"
+            zle accept-line
+        else
+            return 0
+        fi
+    }
+zle -N fzf-z-search
+bindkey '^s' fzf-z-search
+
+select-history() {
+        BUFFER=$(history -n -r 1 \
+            | awk 'length($0) > 2' \
+            | rg -v "^...$" \
+            | rg -v "^....$" \
+            | rg -v "^.....$" \
+            | rg -v "^......$" \
+            | rg -v "^exit$" \
+            | uniq -u \
+            | fzf-tmux --no-sort +m --query "$LBUFFER" --prompt="History > ")
+        CURSOR=$#BUFFER
+    }
+zle -N select-history
+bindkey '^r' select-history
+
+# process search and kill
+psk() { ps -afx|  fzf |  xargs -0 -I {} echo {} | awk '{ printf $1 }' | xargs -0 -I {}  kill -9  {}; }
 
 # find-in-file - usage: fif <SEARCH_TERM>
 fif() {
@@ -221,8 +245,57 @@ function fcsrt() { # fzf coursier resolve tree
   $(cs resolve -t "$1" | fzf --reverse --ansi)
 }
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# git default branch
+gitdefaultbranch(){
+  git remote show origin | grep 'HEAD' | cut -d':' -f2 | sed -e 's/^ *//g' -e 's/ *$//g'
+}
+alias gitdb=gitdefaultbranch
+alias gcodb='g checkout $(gitdb)'
+
+# git current branch
+gitcurrentbranch() {
+  git symbolic-ref --short HEAD | tr -d "\n"
+}
+alias gcb=gitcurrentbranch
+
+gitpull() {
+  git pull --rebase origin $(gcb)
+}
+alias gpull=gitpull
+gpush() {
+  git push -u origin $(gcb)
+}
+alias gpush=gpush
+gitcompush() {
+  git add -A
+  git commit --signoff -m $1
+  git push -u origin $2
+}
+alias gitcompush=gitcompush
+alias gcp='gitcompush $1 "$(gcb)"'
+
+git-remote-add-merge() {
+  git remote add upstream $1
+  git fetch upstream
+  git merge upstream/$(gitdb)
+}
+alias grfa=git-remote-add-merge
+
+git-remote-merge() {
+  git fetch upstream
+  git merge upstream/$(gitdb)
+}
+alias grf=git-remote-merge
+
+# ssh-keygen
+rsagen() {
+  ssh-keygen -t rsa -b 4096 -N $1 -f $HOME/.ssh/$2 -C $USER
+}
+
+sshls() {
+  rg "Host " $HOME/.ssh/config | awk '{print $2}' | rg -v "\*"
+}
+alias sshls=sshls
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

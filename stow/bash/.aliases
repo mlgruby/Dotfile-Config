@@ -11,7 +11,8 @@ alias condac='cupdate && cclean'
 alias c='code .'
 alias cdf='cd $(ls | fzf)'
 alias ce='code . && exit'
-alias config='cd /home/satya/Document/dotfile'
+alias config='cd /home/satya/Documents/dotfile'
+alias confedit='config && c'
 
 # git alias
 alias gcam='ga . && git commit -am'
@@ -33,12 +34,17 @@ alias gwipe='gwip && exit'
 alias gwipgp='gwip && gp'
 alias gwipgpe='gwip && gpe'
 alias hk='gcam housekeeping && gp'
-alias gdb='delete-branches'
 
-# common alias 
+# common alias
 alias ipp='curl https://ipecho.net/plain; echo'
 alias sbtd='sbt -jvm-debug 5005'
 alias sbtnoss='sbt --supershell=false'
 alias scalac-phases='scalac -Xshow-phases'
 alias scalalines='find . -path "*/src*" -name "*.scala" | xargs wc -l | sort -n'
 alias update='sudo apt update && sudo apt -y full-upgrade && sudo apt -y autoremove && cs update'
+alias mkdir='mkdir -p'
+alias rm='rm -rf'
+alias cp='cp -r'
+alias mv='mv -i'
+alias dl="\cd $HOME/Downloads"
+alias dc="\cd $HOME/Documents"
