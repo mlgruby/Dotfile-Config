@@ -1,14 +1,9 @@
 # Dotfile-Config
 
-Configuration file for Bash, nano and emacs
+Configuration file for zsh, git, htop, aliases.
 
-- Bash: Base config file is taken from [dotfile] (https://github.com/helmuthdu/dotfiles).
-    - This config file contains most of the alias which I use constantly plus better git alias.
-    - It also formats the colours for directory
+For installation first intall stow ```sudo apt install stow```
 
-- nano: Base config file is taken from [dotfile] (https://github.com/helmuthdu/dotfiles) and [nanorc](https://github.com/scopatz/nanorc).
-    - This config file contains colour coding for most of the languages.   
+then navigate to `stow` directory and then run `chmod +s stow-nix.sh && ./stow-nix.sh` for any natively installed linux. For wsl's use the same command but with different script `stow-wsl.sh`
 
-To install just paste all the files and directory in your home directory!! pretty simple!!.
-
-Hope community will customize in other better way. Please send me pull request if you added cool features. 
+Hope community will customize in other better way. Please send me pull request if you added cool features.
