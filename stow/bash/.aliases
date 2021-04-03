@@ -12,6 +12,8 @@ alias c='code .'
 alias cdf='cd $(ls | fzf)'
 alias ce='code . && exit'
 alias config='cd /home/satya/Document/dotfile'
+
+# git alias
 alias gcam='ga . && git commit -am'
 alias gcan!='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -v -a --no-edit --amend'
 alias gcangpf!='gcan! && gpf!'
@@ -31,6 +33,9 @@ alias gwipe='gwip && exit'
 alias gwipgp='gwip && gp'
 alias gwipgpe='gwip && gpe'
 alias hk='gcam housekeeping && gp'
+alias gdb='delete-branches'
+
+# common alias 
 alias ipp='curl https://ipecho.net/plain; echo'
 alias sbtd='sbt -jvm-debug 5005'
 alias sbtnoss='sbt --supershell=false'
