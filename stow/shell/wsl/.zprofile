@@ -10,35 +10,35 @@
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-  # include .bashrc if it exists
-  if [ -f "$HOME/.bashrc" ]; then
-  . "$HOME/.bashrc"
-  fi
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-  PATH="$HOME/bin:$PATH"
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-  PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Homebrew
-if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] ; then
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
 
 # set PATH so it includes coursier bin if it exists
-if [ -d "$HOME/.local/share/coursier/bin" ] ; then
-  PATH="$PATH:$HOME/.local/share/coursier/bin"
+if [ -d "$HOME/.local/share/coursier/bin" ]; then
+    PATH="$PATH:$HOME/.local/share/coursier/bin"
 fi
 
 # source local settings
-if [ -f "$HOME/.local/.profile" ] ; then
-  source "$HOME/.local/.profile"
+if [ -f "$HOME/.local/.profile" ]; then
+    source "$HOME/.local/.profile"
 fi
 
 # environment variables
@@ -55,7 +55,7 @@ export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {}'"
 export FZF_ALT_C_COMMAND='fd --type d . --color=never --hidden'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50'"
 
-# java option 
+# java option
 export JAVA_TOOL_OPTIONS="
 -Dconfig.override_with_env_vars=true
 -Djava.net.preferIPv4Stack=true
@@ -73,4 +73,3 @@ export LIBGL_ALWAYS_INDIRECT=1
 export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0"
 export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0/bin"
 # <<< JVM installed by coursier <<<
-

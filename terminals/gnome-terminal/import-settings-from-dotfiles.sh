@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dconf load /org/gnome/terminal/ < .config
+dconf load /org/gnome/terminal/ <.config

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dconf dump /org/gnome/terminal/ > .config
+dconf dump /org/gnome/terminal/ >.config

@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# ssh-key generation 
+# ssh-key generation
 ssh-keygen -t rsa -b 4096 -N 'pass-phrase' -C "you@mail.com" -f ~/.ssh/id_rsa
 ssh-keygen -t rsa -b 4096 -N 'pass-phrase' -C "you@mail.com" -f ~/.ssh/github_rsa
 ssh-keygen -t rsa -b 4096 -N 'pass-phrase' -C "you@mail.com" -f ~/.ssh/mozilla_rsa
 
-# ssh-key addition 
+# ssh-key addition
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/github_rsa
 ssh-add ~/.ssh/mozilla_rsa
 
-# ssh-key permission 
+# ssh-key permission
 chmod 700 ~/.ssh
 chmod 644 ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/known_hosts
