@@ -28,6 +28,8 @@ Plug 'mhinz/vim-startify'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'psf/black'
+Plug 'integralist/vim-mypy'
 
 " Entertainment
 Plug 'hendrikpetertje/vimify'
