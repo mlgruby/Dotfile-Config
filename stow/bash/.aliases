@@ -48,3 +48,4 @@ alias cp='cp -r'
 alias mv='mv -i'
 alias dl="\cd $HOME/Downloads"
 alias dc="\cd $HOME/Documents"
+alias vim=nvim
