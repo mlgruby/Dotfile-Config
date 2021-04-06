@@ -233,6 +233,7 @@ project/plugins/project/
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+env
 
 ### vscode ###
 .vscode/*
