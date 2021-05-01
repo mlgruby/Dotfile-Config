@@ -49,3 +49,4 @@ alias mv='mv -i'
 alias dl="\cd $HOME/Downloads"
 alias dc="\cd $HOME/Documents"
 alias vim=nvim
+alias re="source ~/.zshrc"
