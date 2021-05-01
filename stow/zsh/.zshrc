@@ -320,3 +320,8 @@ unset __conda_setup
 
 # coursier bin
 export PATH="$PATH:/home/satya/.local/share/coursier/bin"
+
+# Pyenv setup 
+export PATH="/home/satya/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)" 
