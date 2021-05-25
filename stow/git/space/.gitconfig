@@ -29,6 +29,7 @@
 	helper = cache --timeout 3600
 [rerere]
 	enabled = true
+	editor = code --wait
 [core]
 	autocrlf = input
 [init]
