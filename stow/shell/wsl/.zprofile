@@ -73,3 +73,8 @@ export LIBGL_ALWAYS_INDIRECT=1
 export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0"
 export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0/bin"
 # <<< JVM installed by coursier <<<
+
+# pyenv executable 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
