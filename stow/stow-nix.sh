@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo '[*] Removing default configurations ...'
-rm ~/.profile ~/.zprofile ~/.gitconfig ~/.aliases ~/.config/git/ignore ~/.config/htop/htoprc
+rm ~/.profile ~/.zprofile ~/.gitconfig ~/.aliases ~/.config/git/ignore ~/.config/htop/htoprc ~/.zshrc
 
 echo '[*] Stowing/Creating simlinks for aliases, git, htop, zsh, neovim & zprofile ...'
 stow -vSt ~ bash htop zsh neovim

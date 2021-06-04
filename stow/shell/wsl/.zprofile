@@ -70,9 +70,10 @@ export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/nu
 export LIBGL_ALWAYS_INDIRECT=1
 
 
+
 # >>> JVM installed by coursier >>>
-export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java11@21.0.0"
-export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java11@21.0.0/bin"
+export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0"
+export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.0.0/bin"
 # <<< JVM installed by coursier <<<
 
 # pyenv executable 
