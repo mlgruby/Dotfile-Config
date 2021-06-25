@@ -63,3 +63,8 @@ export JAVA_TOOL_OPTIONS="
 # cache ssh key at login
 keychain --nogui --quiet $HOME/.ssh/id_rsa
 source $HOME/.keychain/$(hostname)-sh
+
+# >>> JVM installed by coursier >>>
+export JAVA_HOME="/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.1.0"
+export PATH="$PATH:/home/satya/.cache/coursier/jvm/graalvm-ce-java8@21.1.0/bin"
+# <<< JVM installed by coursier <<<
